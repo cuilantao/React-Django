@@ -3,5 +3,5 @@ from . import views
 from django.urls import path
 
 urlpatterns = [
-    url(r'^$', views.home),
+    path('', views.home, name='blog-home'),
 ]
