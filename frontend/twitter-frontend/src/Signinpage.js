@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import axios from "axios"
+import './Signinpage.css'
 /* Component for the SignInPage page */ 
 
 class SignInPage extends React.Component {
@@ -43,9 +44,22 @@ class SignInPage extends React.Component {
         )
     }
 
+    createuser = () => {
+        axios.post('http://localhost:8000/user/create/', {
+            "user_name": this.user_name.current.value,
+            "password": this.password.current.value
+        }).then(
+            res => {
+                console.log(res);
+            }
+        ).catch(err => {
+            console.log(err)
+        })
+    }
+
     render(){
         return (
-            <div>
+            <div id = "loginpanel">
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>User Name</Form.Label>
@@ -62,7 +76,7 @@ class SignInPage extends React.Component {
                     <Button variant="primary" onClick = {this.checkcrendential}>
                         Sign In
                     </Button>
-                    <Button variant="primary" onClick = {this.checkcrendential}>
+                    <Button id = "signup_button" variant="primary" onClick = {this.createuser}>
                         Sign Up
                     </Button>
                 </Form>
