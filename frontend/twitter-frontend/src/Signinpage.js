@@ -62,6 +62,9 @@ class SignInPage extends React.Component {
                     <Button variant="primary" onClick = {this.checkcrendential}>
                         Sign In
                     </Button>
+                    <Button variant="primary" onClick = {this.checkcrendential}>
+                        Sign Up
+                    </Button>
                 </Form>
             </div>
         )
