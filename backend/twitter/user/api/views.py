@@ -4,8 +4,10 @@ from rest_framework.generics import (
     ListAPIView
 )
 
+from django.views.decorators.http import require_http_methods
 from user.models import User
 from .serializers import UserSerializer
+from django.http import HttpResponse
 
 # Use this class to sign up for a new user.
 class CreateUserView(CreateAPIView):
@@ -21,4 +23,6 @@ class FilteringUserView(ListAPIView):
 
     def get_queryset(self):
         user_name = self.request.query_params.get('user_name', None)
-        return User.objects.filter(user_name = user_name)
+        pass_word = self.request.query_params.get('password', None)
+        valid_users = User.objects.filter(user_name = user_name, password = pass_word)
+        return valid_users
