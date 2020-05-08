@@ -9,8 +9,14 @@ import Nav from 'react-bootstrap/Nav';
 class Mainpage extends React.Component {
     constructor(props){
         super(props)
-        this.state = { usename: 'Tony' };
+        console.log(this.props.cookies.cookies)
+        this.state = { use_name: "" };
     }
+
+    componentWillMount() {
+        console.log(this.props.cookies.cookies.cur_user)
+        this.setState({user_name: this.props.cookies.cookies.cur_user})
+      }
 
     render(){
         return(
@@ -41,7 +47,7 @@ class Mainpage extends React.Component {
                         <Card style={{ width: '18rem' }}>
                             <Card.Img variant="top" src="..." />
                             <Card.Body>
-                                <Card.Title>Tony @cuilantao</Card.Title>
+                                <Card.Title>{this.state.user_name}</Card.Title>
                                 <Card.Text>
                                 Ecopia Full Stack Intern
                                 </Card.Text>
@@ -60,7 +66,7 @@ class Mainpage extends React.Component {
                                 </div>
 
                                 <div className="tweetContent"> 
-                                    <h3>Tony <span className="grey">@UofT</span></h3>
+                                    <h3>{this.state.user_name} <span className="grey">@UofT</span></h3>
                                     <p>
                                         Another great day at UofT! <span className="hashtag">#UofT #GreatDay</span>
                                     </p>
@@ -71,7 +77,7 @@ class Mainpage extends React.Component {
                                 </div>
                         
                                 <div className="tweetContent"> 
-                                    <h3>Tony <span className="grey">@UofT</span></h3>
+                                    <h3>{this.state.user_name} <span className="grey">@UofT</span></h3>
                                     <p>
                                         Check out some books at <span className="hashtag">#robarts</span>
                                     </p>

@@ -36,13 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-#login-form {
-  width: 400px;
-  height: 350px;
-  left:35%;
-  padding-top: 50px;
-  top: 30%;
-  padding-bottom: 50px;
-  position: absolute;
-}
