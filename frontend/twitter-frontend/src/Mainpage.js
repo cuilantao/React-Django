@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Mainpage.css';
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 
 class Mainpage extends React.Component {
     constructor(props){
@@ -54,14 +55,16 @@ class Mainpage extends React.Component {
                             </ul>
                         </div>
                         <div id="profileInfo">
-                            <div className="card">
-                                <img src="..." class="card-img-top" alt="..."></img>
-                                <h2>Tony</h2>
-                                <p className="grey">@cuilantao</p>
-                                <p>
-                                    Ecopia Full Stack Intern #Ecopia
-                                </p>
-                            </div>
+                        <Card style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src="..." />
+                            <Card.Body>
+                                <Card.Title>Tony @cuilantao</Card.Title>
+                                <Card.Text>
+                                Ecopia Full Stack Intern
+                                </Card.Text>
+                                <Button variant="primary">Follow</Button>
+                            </Card.Body>
+                        </Card>
                         </div>
                         <div id='timeline'>
 
