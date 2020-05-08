@@ -5,6 +5,6 @@ from .views import (
 )
 
 urlpatterns = [
-    path('create_tweets', CreateTweetsView.as_view()),
-    path('all_tweets', GetAllRelatedTweetsView.as_view())
+    path('create_tweets/', CreateTweetsView.as_view()),
+    path('all_tweets/', GetAllRelatedTweetsView.as_view())
 ]

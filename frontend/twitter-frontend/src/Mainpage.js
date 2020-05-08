@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Mainpage.css';
-import { Button, Navbar, Form, FormControl} from 'react-bootstrap'
-import { Link } from 'react-router-dom';
+import { Button, Nav, Navbar, Form, FormControl} from 'react-bootstrap'
 import Card from 'react-bootstrap/Card';
-import Nav from 'react-bootstrap/Nav';
+
 
 class Mainpage extends React.Component {
     constructor(props){
@@ -26,7 +25,7 @@ class Mainpage extends React.Component {
                     <Nav className="mr-auto">
                     </Nav>
                     <Form inline>
-                    <Nav.Link href="./">
+                    <Nav.Link href="./write">
                         <Button variant="light" id="write-button">Write something</Button>
                     </Nav.Link>
                     </Form>
@@ -45,7 +44,6 @@ class Mainpage extends React.Component {
                         </div>
                         <div id="profileInfo">
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="..." />
                             <Card.Body>
                                 <Card.Title>{this.state.user_name}</Card.Title>
                                 <Card.Text>
