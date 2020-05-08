@@ -3,9 +3,8 @@ import logo from './logo.svg';
 import './App.css'; 
 import {withCookies, useCookies, Cookies} from "react-cookie"
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
-import LogInPage from './Loginpage'
 import SignInPage from './Signinpage'
-import Mainpage from './Mainpage';
+import Mainpage from './Mainpage'
 
 function App() {
 
@@ -15,8 +14,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Switch>
-          <Route exact path='/' render={() => (<LogInPage cookies={{cookies, setCookie, removeCookie}}/>)}/>
-          <Route exact path='/signup' render={() => (<SignInPage cookies={{cookies, setCookie, removeCookie}}/>)}/>
+          <Route exact path='/' render={() => (<SignInPage cookies={{cookies, setCookie, removeCookie}}/>)}/>
           <Route exact path='/mainpage' render={() => (<Mainpage cookies={{cookies, setCookie, removeCookie}}/>)}/>
         </Switch>
       </BrowserRouter>

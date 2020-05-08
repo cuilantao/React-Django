@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Mainpage.css';
-import Button from 'react-bootstrap/Button'
+import { Button, Navbar, Form, FormControl} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+import Nav from 'react-bootstrap/Nav';
 
 class Mainpage extends React.Component {
     constructor(props){
@@ -13,31 +15,24 @@ class Mainpage extends React.Component {
     render(){
         return(
             <div id="whole-wrap">
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <a className="navbar-brand" href="#">Twitter</a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-                        <form className="form-inline my-2 my-lg-0">
-                            <input className="form-control mr-sm-2" id="search-bar" type="search" placeholder="#Ecopia" aria-label="Search"></input>
-                            <button className="btn btn-outline-success my-2 my-sm-0" id="search-button" type="submit">Search</button>
-                        </form>
-                        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li className="nav-item">
-                            <Link to={'./'}>
-                                <button type="button" id="login-button" className="btn btn-light">Log in</button>
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to={'./signup'}>
-                                <button type="button" id="signup-button" className="btn btn-primary">Sign up</button>
-                            </Link>
-                        </li>
-                        </ul>
-                    </div>
-                </nav>
+                <Navbar bg="dark" variant="dark">
+                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                    <Nav className="mr-auto">
+                    <Nav.Link href="./mainpage">
+                        <Button variant="light">Home</Button>
+                    </Nav.Link>
+                    </Nav>
+                    <Form inline>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-info">Search</Button>
+                    </Form>
+                    <Nav.Link href="./">
+                        <Button variant="light">Log in</Button>
+                    </Nav.Link>
+                    <Nav.Link href="./">
+                        <Button variant="primary">Sign up</Button>
+                    </Nav.Link>
+                </Navbar>
                 <span className="main-body">
                     <div className="tweet_container">
                         <div id="profileStats">
@@ -54,14 +49,16 @@ class Mainpage extends React.Component {
                             </ul>
                         </div>
                         <div id="profileInfo">
-                            <div className="card">
-                                <img src="..." class="card-img-top" alt="..."></img>
-                                <h2>Tony</h2>
-                                <p className="grey">@cuilantao</p>
-                                <p>
-                                    Ecopia Full Stack Intern #Ecopia
-                                </p>
-                            </div>
+                        <Card style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src="..." />
+                            <Card.Body>
+                                <Card.Title>Tony @cuilantao</Card.Title>
+                                <Card.Text>
+                                Ecopia Full Stack Intern
+                                </Card.Text>
+                                <Button variant="primary">Follow</Button>
+                            </Card.Body>
+                        </Card>
                         </div>
                         <div id='timeline'>
 
