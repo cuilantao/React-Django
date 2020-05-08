@@ -18,20 +18,20 @@ class Mainpage extends React.Component {
                 <Navbar bg="dark" variant="dark">
                     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
                     <Nav className="mr-auto">
-                    <Nav.Link href="./signup">
+                    <Nav.Link href="./mainpage">
                         <Button variant="light">Home</Button>
-                    </Nav.Link>
-                    <Nav.Link href="./signup">
-                        <Button variant="light">Log in</Button>
-                    </Nav.Link>
-                    <Nav.Link href="./signup">
-                        <Button variant="primary">Sign up</Button>
                     </Nav.Link>
                     </Nav>
                     <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                     <Button variant="outline-info">Search</Button>
                     </Form>
+                    <Nav.Link href="./">
+                        <Button variant="light">Log in</Button>
+                    </Nav.Link>
+                    <Nav.Link href="./">
+                        <Button variant="primary">Sign up</Button>
+                    </Nav.Link>
                 </Navbar>
                 <span className="main-body">
                     <div className="tweet_container">

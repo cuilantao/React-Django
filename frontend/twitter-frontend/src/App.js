@@ -4,6 +4,7 @@ import './App.css';
 import {withCookies, useCookies, Cookies} from "react-cookie"
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import SignInPage from './Signinpage'
+import Mainpage from './Mainpage'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' render={() => (<SignInPage cookies={{cookies, setCookie, removeCookie}}/>)}/>
+          <Route exact path='/mainpage' render={() => (<Mainpage cookies={{cookies, setCookie, removeCookie}}/>)}/>
         </Switch>
       </BrowserRouter>
     </div>
