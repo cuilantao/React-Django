@@ -16,21 +16,16 @@ class Mainpage extends React.Component {
         return(
             <div id="whole-wrap">
                 <Navbar bg="dark" variant="dark">
-                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                    <Navbar.Brand href="./mainpage">Home</Navbar.Brand>
                     <Nav className="mr-auto">
-                    <Nav.Link href="./mainpage">
-                        <Button variant="light">Home</Button>
-                    </Nav.Link>
                     </Nav>
                     <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-info">Search</Button>
+                    <Nav.Link href="./">
+                        <Button variant="light" id="write-button">Write something</Button>
+                    </Nav.Link>
                     </Form>
                     <Nav.Link href="./">
-                        <Button variant="light">Log in</Button>
-                    </Nav.Link>
-                    <Nav.Link href="./">
-                        <Button variant="primary">Sign up</Button>
+                        <Button variant="warning">Sign out</Button>
                     </Nav.Link>
                 </Navbar>
                 <span className="main-body">
@@ -39,12 +34,6 @@ class Mainpage extends React.Component {
                             <ul>
                                 <li>Tweets 
                                     <span className="profileStatsNumber">1</span>
-                                </li>
-                                <li>Followers
-                                    <span className="profileStatsNumber">0</span>
-                                </li>
-                                <li>Following
-                                    <span className="profileStatsNumber">0</span>
                                 </li>
                             </ul>
                         </div>
@@ -56,7 +45,6 @@ class Mainpage extends React.Component {
                                 <Card.Text>
                                 Ecopia Full Stack Intern
                                 </Card.Text>
-                                <Button variant="primary">Follow</Button>
                             </Card.Body>
                         </Card>
                         </div>

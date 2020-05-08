@@ -45,7 +45,7 @@ class SignInPage extends React.Component {
 
     render(){
         return (
-            <div>
+            <div id="login-form">
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>User Name</Form.Label>
