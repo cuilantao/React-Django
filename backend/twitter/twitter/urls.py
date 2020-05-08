@@ -19,5 +19,6 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('user/', include('user.api.urls'))
+    path('user/', include('user.api.urls')),
+    path('tweets/', include('tweets.api.urls'))
 ]

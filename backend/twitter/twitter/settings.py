@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 CORS_ORIGIN_ALLOW_ALL=True
 
 INSTALLED_APPS = [
+    'tweets.apps.TweetsConfig',
     'user.apps.UserConfig',
     'django.contrib.admin',
     'django.contrib.auth',
