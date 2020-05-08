@@ -1,0 +1,110 @@
+#whole-wrap{
+    margin:1%;
+  }
+
+#search-bar{
+    width: 400px;
+}
+
+
+#search-button{
+    margin-left: 20px;
+    margin-right: 800px;
+}
+
+#profileStats {
+	padding: 5px;
+	background-color: white;
+}
+
+#profileStats ul {
+	margin: 0px;
+	padding: 3px;
+	
+	margin-left: 390px;
+}
+
+#profileStats ul li {
+	margin-right: 20px;
+	font-weight: bold;
+	list-style: none;
+	text-align: center;
+
+	display: inline-block;
+		
+}
+
+.profileStatsNumber {
+	display: block;
+	font-size: 150%;
+	text-align: center;
+}
+
+
+#profileInfo {
+	background-color: white;
+	padding: 10px;
+	min-height: 300px;
+	width: 300px;
+	margin-left: 50px;
+	margin-top: 20px;
+	float: left;
+}
+
+#timeline {
+	border-radius: 10px;
+	background-color: white;
+	width: 600px;
+	margin-left: 390px;
+	margin-top: 20px;
+}
+
+.timelineHeader {
+	border-bottom: 1px solid grey;
+}
+
+.timelineHeader ul {
+	margin: 0px;
+}
+
+.timelineHeader ul li {
+	padding: 10px;
+	margin-right: 20px;
+	font-size: 150%;
+	font-weight: bold;
+	display: inline-block;
+
+}
+
+.tweet {
+	background-color: white;
+	min-height: 100px;
+	overflow: auto;
+	border-bottom: 1px solid grey;
+}
+
+.tweetIconContainer {
+	width: 80px;
+}
+
+.tweetIcon {
+	border-radius: 50%;
+	height: 60px;
+	width: 60px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	float: left;
+
+}
+
+.tweetContent {
+	margin: 0px;
+	width: 520px;
+	float: left;
+}
+
+
+.tweetContentPicture {
+	max-width: 500px;
+}
