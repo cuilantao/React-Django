@@ -16,12 +16,29 @@ class SignInPage extends React.Component {
     }
 
     checkcrendential = () => {
-        axios.post('http://localhost:8000/user/create/', {
-            "user_name": this.user_name.current.value,
-            "password": this.password.current.value
-        }).then(
+        let url = new URL('http://localhost:8000/user/loginattempt/');
+        url.searchParams.set('user_name', this.user_name.current.value);
+        url.searchParams.set('password', this.password.current.value)
+        url = url.href;
+
+        axios.get(url).then(
             res => {
-                console.log(res);
+                if (res.data.length == 0){
+                    window.alert("Wrong User Name or Password, Maybe sign up first.")
+                }
+                else{
+                    let user_name = res.data[0].user_name
+                    this.props.cookies.setCookie("cur_user", user_name, {
+                        path : "/",
+                        expires: 0
+                    });
+                    console.log(this.props.cookies)
+
+                }
+            }
+        ).catch(
+            error => {
+                console.log(error)
             }
         )
     }
@@ -43,7 +60,7 @@ class SignInPage extends React.Component {
                         <Form.Control type="password" placeholder="Password" ref = {this.password}/>
                     </Form.Group>
                     <Button variant="primary" onClick = {this.checkcrendential}>
-                        LOGIN
+                        Sign In
                     </Button>
                 </Form>
             </div>
