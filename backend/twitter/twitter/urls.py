@@ -19,7 +19,5 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
-    url(r'^$', include('home.urls')),
-    url(r'^user$', include('user.urls')),
+    path('user/', include('user.api.urls'))
 ]
