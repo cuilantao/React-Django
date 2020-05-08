@@ -9,28 +9,29 @@ import Nav from 'react-bootstrap/Nav';
 class Mainpage extends React.Component {
     constructor(props){
         super(props)
-        this.state = { usename: 'Tony' };
+        console.log(this.props.cookies.cookies)
+        this.state = { use_name: "" };
     }
+
+    componentWillMount() {
+        console.log(this.props.cookies.cookies.cur_user)
+        this.setState({user_name: this.props.cookies.cookies.cur_user})
+      }
 
     render(){
         return(
             <div id="whole-wrap">
                 <Navbar bg="dark" variant="dark">
-                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                    <Navbar.Brand href="./mainpage">Home</Navbar.Brand>
                     <Nav className="mr-auto">
-                    <Nav.Link href="./mainpage">
-                        <Button variant="light">Home</Button>
-                    </Nav.Link>
                     </Nav>
                     <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-info">Search</Button>
+                    <Nav.Link href="./">
+                        <Button variant="light" id="write-button">Write something</Button>
+                    </Nav.Link>
                     </Form>
                     <Nav.Link href="./">
-                        <Button variant="light">Log in</Button>
-                    </Nav.Link>
-                    <Nav.Link href="./">
-                        <Button variant="primary">Sign up</Button>
+                        <Button variant="warning">Sign out</Button>
                     </Nav.Link>
                 </Navbar>
                 <span className="main-body">
@@ -40,23 +41,16 @@ class Mainpage extends React.Component {
                                 <li>Tweets 
                                     <span className="profileStatsNumber">1</span>
                                 </li>
-                                <li>Followers
-                                    <span className="profileStatsNumber">0</span>
-                                </li>
-                                <li>Following
-                                    <span className="profileStatsNumber">0</span>
-                                </li>
                             </ul>
                         </div>
                         <div id="profileInfo">
                         <Card style={{ width: '18rem' }}>
                             <Card.Img variant="top" src="..." />
                             <Card.Body>
-                                <Card.Title>Tony @cuilantao</Card.Title>
+                                <Card.Title>{this.state.user_name}</Card.Title>
                                 <Card.Text>
                                 Ecopia Full Stack Intern
                                 </Card.Text>
-                                <Button variant="primary">Follow</Button>
                             </Card.Body>
                         </Card>
                         </div>
@@ -72,7 +66,7 @@ class Mainpage extends React.Component {
                                 </div>
 
                                 <div className="tweetContent"> 
-                                    <h3>Tony <span className="grey">@UofT</span></h3>
+                                    <h3>{this.state.user_name} <span className="grey">@UofT</span></h3>
                                     <p>
                                         Another great day at UofT! <span className="hashtag">#UofT #GreatDay</span>
                                     </p>
@@ -83,7 +77,7 @@ class Mainpage extends React.Component {
                                 </div>
                         
                                 <div className="tweetContent"> 
-                                    <h3>Tony <span className="grey">@UofT</span></h3>
+                                    <h3>{this.state.user_name} <span className="grey">@UofT</span></h3>
                                     <p>
                                         Check out some books at <span className="hashtag">#robarts</span>
                                     </p>

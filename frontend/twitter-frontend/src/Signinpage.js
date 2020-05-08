@@ -34,7 +34,7 @@ class SignInPage extends React.Component {
                         expires: 0
                     });
                     console.log(this.props.cookies)
-
+                    this.getRedirected()
                 }
             }
         ).catch(
@@ -42,6 +42,10 @@ class SignInPage extends React.Component {
                 console.log(error)
             }
         )
+    }
+
+    getRedirected = () => {
+        window.location.href = './mainpage'
     }
 
     createuser = () => {
@@ -63,7 +67,7 @@ class SignInPage extends React.Component {
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>User Name</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" ref = {this.user_name}/>
+                        <Form.Control type="email" placeholder="Enter user name" ref = {this.user_name}/>
                         <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                         </Form.Text>
